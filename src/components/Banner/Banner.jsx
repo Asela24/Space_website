@@ -1,5 +1,5 @@
 import "./Banner.sass";
-import earthImage from "../../assets/EarthImage.png";
+import earthImage from "../../assets/EarthImage.webp";
 import { Button } from "../Button/Button";
 
 export const Banner = () => {
@@ -24,16 +24,3 @@ export const Banner = () => {
     </section>
   );
 };
-
-//48 (BANNER -2)
-//72 b
-//36 B
-//32 B / APP
-//16 - BUTTON / CARD / APP
-// 22- BUTTON
-//40 - C
-//46PX - C
-// 74PX - C
-// 24PX - C
-//18 - H / APP / APP
-//20 - APP
