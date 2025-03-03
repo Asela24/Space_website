@@ -1,3 +1,5 @@
+import './InfoSection.sass'
+
 export const InfoSection = () => (
   <section className="info_section">
     <h3 className="info_section__title">Embark on a space journey</h3>
@@ -17,7 +19,6 @@ export const InfoSection = () => (
       id="info_section__toggle"
       className="info_section__toggle"
     />
-
     <p className="info_section__content info_section__content--hidden">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

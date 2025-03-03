@@ -1,12 +1,11 @@
-@use'./base'
-@import './base'
+@use'./base' as *
 
 .content_sections
     background: linear-gradient(196.2deg, #0D1E48 0%, #304571 100%)
-    padding: 58px base.$desktop-left-padding
+    padding: 58px $desktop-left-padding
 
-    @media (max-width: base.$breakpoint-tablet)
-        padding: 58px base.$tablet-left-padding
+    @media (max-width: $breakpoint-tablet)
+        padding: 58px $tablet-left-padding
 
 .offers
     display: flex
@@ -28,29 +27,29 @@
     align-items: stretch
     padding-bottom: 62px
 
-    @media (min-width: base.$breakpoint-tablet)
+    @media (min-width: $breakpoint-tablet)
         grid-template-columns: 1fr 1fr
 
         > article:nth-child(4n),
         > article:nth-child(1)
             grid-column: 1 / -1
 
-    @media (max-width: base.$breakpoint-tablet)
+    @media (max-width: $breakpoint-tablet)
         grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
         padding: 10px 10px 55px
         justify-items: center
 
-    @media (max-width: base.$breakpoint-mobile)
+    @media (max-width: $breakpoint-mobile)
         grid-template-columns: 1fr
 
 .footer
     height: 127px
-    background-color: base.$primary-black
+    background-color: $primary-black
 
     @include flexCentralAligment
     flex-direction: column
 
-    color: base.$lemon
+    color: $lemon
     font-weight: 800
     font-size: 18px
     line-height: 28px

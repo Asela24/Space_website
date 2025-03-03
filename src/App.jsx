@@ -2,9 +2,10 @@ import "./App.sass";
 import { Banner } from "./components/Banner/Banner";
 import { Header } from "./components/Header/Header";
 import { Card } from "./components/Card/Card";
-import RocketIcon from "./assets/RocketIcon.svg";
+import { RocketIcon } from "./assets/icons";
 import { InfoSection } from "./components/InfoSection/InfoSection";
-import { cards } from "./cards";
+import { cards } from "./utils/cards";
+
 function App() {
   return (
     <div className="App">

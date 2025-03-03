@@ -1,54 +1,42 @@
-import earthIcon from "../../assets/EarthIcon.svg";
-import logoIcon from "../../assets/LogoIcon.svg";
-import cartIcon from "../../assets/CartIcon.svg";
-import menuIcon from "../../assets/MenuIcon.svg";
-import cartHoverIcon from "../../assets/CartHoverIcon.svg";
-import closeIcon from "../../assets/CloseIcon.svg";
-import { useRef, useEffect } from "react";
-
+import {
+  EarthLogoIcon,
+  LogoIcon,
+  CartIcon,
+  CartHoverIcon,
+  MenuIcon,
+  CloseIcon,
+} from "../../assets/icons/index";
+import { useMenuToggle } from "../../utils/useMenuToggle";
 import "./Header.sass";
-import { useState } from "react";
 
 export const Header = () => {
-  const [isOpen, setOpen] = useState(false);
-
-  const menuRef = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setOpen(false);
-    }
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const { menuRef, isOpen, handleClose, setOpen } = useMenuToggle();
 
   return (
     <header className="header" ref={menuRef}>
       <div className="header__icons">
-        <img src={earthIcon} alt="earth-icon" className="header__icons-earth" />
-        <img src={logoIcon} alt="logo-icon" className="header__icons-logo" />
+        <img
+          src={EarthLogoIcon}
+          alt="earth-icon"
+          className="header__icon-earth"
+        />
+        <img src={LogoIcon} alt="logo-icon" className="header__icon-logo" />
       </div>
-      <nav className={`nav ${isOpen ? "nav--open" : ""}`}>
+      <nav
+        className={`nav ${isOpen ? "nav--open" : ""}`}
+        aria-label="Main navigation"
+      >
         <ul className="nav__list">
-          <li className="nav__item nav__item-hover-text" onClick={handleClose}>
+          <li className="nav__item nav__item--hover-text" onClick={handleClose}>
             Home
           </li>
-          <li className="nav__item nav__item-hover-text" onClick={handleClose}>
+          <li className="nav__item nav__item--hover-text" onClick={handleClose}>
             Products
           </li>
-          <li className="nav__item nav__item-hover-icon" onClick={handleClose}>
-            <img src={cartIcon} alt="cart-icon" className="nav__icon" />
+          <li className="nav__item nav__item--hover-icon" onClick={handleClose}>
+            <img src={CartIcon} alt="cart-icon" className="nav__icon" />
             <img
-              src={cartHoverIcon}
+              src={CartHoverIcon}
               className="nav__icon--hover"
               alt="cart-hover-icon"
             />
@@ -60,11 +48,11 @@ export const Header = () => {
         className="header__menu-icon"
         onClick={() => setOpen((state) => !state)}
       >
-        <img src={menuIcon} alt="menu-icon" />
+        <img src={MenuIcon} alt="menu-icon" />
       </button>
 
       <button className="header__close-icon" onClick={handleClose}>
-        <img src={closeIcon} alt="close-icon" />
+        <img src={CloseIcon} alt="close-icon" />
       </button>
     </header>
   );

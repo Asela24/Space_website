@@ -1,18 +1,17 @@
-@use '../../base'
+@use '../../base' as *
 
 .header
     display: flex
     justify-content: space-between
     align-items: center
-    background-color: base.$primary-black
+    background-color: $primary-black
     height: 80px
+    padding: 0 $desktop-left-padding
 
-    padding: 0 base.$desktop-left-padding
+    @media (max-width: $breakpoint-tablet)
+        padding: 0 $tablet-left-padding
 
-    @media (max-width: base.$breakpoint-tablet)
-        padding: 0 base.$tablet-left-padding
-
-    @media (max-width: base.$breakpoint-mobile)
+    @media (max-width: $breakpoint-mobile)
         height: 48px
 
     &__icons
@@ -20,19 +19,19 @@
         justify-content: start
         align-items: center
 
-    &__icons-earth
-        @media (max-width: base.$breakpoint-tablet)
+    &__icon-earth
+        @media (max-width: $breakpoint-tablet)
             height: 24px
 
-    &__icons-logo
-        @media (max-width: base.$breakpoint-tablet)
+    &__icon-logo
+        @media (max-width: $breakpoint-tablet)
             height: 17px
 
     &__menu-icon
         display: none
         padding: 0
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             display: block
 
     &__close-icon
@@ -44,16 +43,16 @@
         z-index: 10
 
 .nav
-    @media (max-width: base.$breakpoint-mobile)
+    @media (max-width: $breakpoint-mobile)
         display: none
 
     &--open
         display: none
         box-sizing: border-box
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             display: flex
-            background-color: black
+            background-color: $primary-black
             position: fixed
             top: 0
             width: 50%
@@ -78,7 +77,7 @@
         align-items: center
         gap: 30px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             flex-direction: column
             justify-content: start
             align-items: start
@@ -89,14 +88,14 @@
         font-size: 18px
         line-height: 21.6px
 
-        &-hover-text
+        &--hover-text
             &:hover
-                background: base.$pink-lemon-gradient
+                background: $pink-lemon-gradient
                 -webkit-background-clip: text
                 background-clip: text
                 color: transparent
 
-        &-hover-icon
+        &--hover-icon
             position: relative
 
             &:hover

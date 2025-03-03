@@ -15,7 +15,8 @@ export const Banner = () => {
           Where the possibilities are{" "}
           <span className="banner__highlight--lemon">endless!</span>
         </p>
-        <Button label="Learn more" variant="filled" size="big"/>
+
+        <Button variant="filled" size="big" label="Learn more" />
       </div>
 
       <div className="banner__image">

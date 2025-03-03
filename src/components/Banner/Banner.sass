@@ -1,8 +1,7 @@
-@use '../../base'
-@import '../../base'
+@use '../../base' as *
 
 @mixin middleTabletFont
-    @media (max-width: base.$breakpoint-tablet)
+    @media (max-width: $breakpoint-tablet)
         font-size: 48px
         line-height: 48px
 
@@ -14,12 +13,12 @@
 
     overflow: hidden
     gap: 56px
-    padding: 59px 0px 59px base.$desktop-left-padding
+    padding: 59px 0px 59px $desktop-left-padding
 
-    @media (max-width: base.$breakpoint-tablet)
-        padding-left: base.$tablet-left-padding
+    @media (max-width: $breakpoint-tablet)
+        padding-left: $tablet-left-padding
 
-    @media (max-width: base.$breakpoint-mobile)
+    @media (max-width: $breakpoint-mobile)
         flex-direction: column-reverse
         justify-content: flex-start
         height: 451px
@@ -33,7 +32,7 @@
 
         @include middleTabletFont
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             align-items: center
             justify-content: center
             padding: 0 34px 44px
@@ -45,7 +44,7 @@
 
         @include middleTabletFont
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             text-align: center
             font-size: 36px
             line-height: 36px
@@ -55,26 +54,26 @@
         font-size: 32px
         line-height: 38.4px
 
-        @media (max-width: base.$breakpoint-tablet)
+        @media (max-width: $breakpoint-tablet)
             font-size: 22px
             line-height: 26.4px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             font-size: 16px
             line-height: 19.2px
 
     &__highlight--pink
-        color: base.$pink
+        color: $pink
 
     &__highlight--lemon
-        color: base.$lemon
+        color: $lemon
 
     &__image
         overflow: hidden
 
-        @media (max-width: base.$breakpoint-tablet)
+        @media (max-width: $breakpoint-tablet)
             > img
                 width: 299px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             flex-shrink: 0

@@ -1,14 +1,16 @@
+@use '../../base' as *
+
 .info_section
     &__title
         font-size: 32px
         line-height: 38.4px
         font-weight: 800
 
-        @media (max-width: base.$breakpoint-tablet)
+        @media (max-width: $breakpoint-tablet)
             font-size: 24px
             line-height: 28.8px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             font-size: 18px
             line-height: 21.6px
 
@@ -18,11 +20,11 @@
         opacity: 0.6
         margin: 17px 0
 
-        @media (max-width: base.$breakpoint-tablet)
+        @media (max-width: $breakpoint-tablet)
             font-size: 16px
             line-height: 19.2px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             font-size: 14px
             line-height: 16.8px
 
@@ -45,7 +47,7 @@
 
     &__button
         display: inline-block
-        color: base.$lemon
+        color: $lemon
         font-weight: 800
         font-size: 20px
         line-height: 24px
@@ -53,11 +55,11 @@
         &:hover
             opacity: 0.6
 
-        @media (max-width: base.$breakpoint-tablet)
+        @media (max-width: $breakpoint-tablet)
             font-size: 16px
             line-height: 19.2px
 
-        @media (max-width: base.$breakpoint-mobile)
+        @media (max-width: $breakpoint-mobile)
             font-size: 14px
             line-height: 16.8px
 

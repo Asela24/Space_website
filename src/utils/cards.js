@@ -1,7 +1,7 @@
-import FirstCardBackground from "./assets/FirstCardBackground.webp";
-import SecondCardBackground from "./assets/SecondCardBackground.webp";
-import ThirdCardBackground from "./assets/ThirdCardBackground.webp";
-import FourthCardBackground from "./assets/FourthCardBackground.webp";
+import FirstCardBackground from "../assets/FirstCardBackground.webp";
+import SecondCardBackground from "../assets/SecondCardBackground.webp";
+import ThirdCardBackground from "../assets/ThirdCardBackground.webp";
+import FourthCardBackground from "../assets/FourthCardBackground.webp";
 
 export const cards = [
   {
