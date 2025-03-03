@@ -1,12 +1,229 @@
-@use'./base'
-@import './base'
+@use './base' as *
+
+@mixin button-medium
+    font-size: 16px
+    line-height: 19.2px
+    padding: 7px 40px
+
+@mixin button-big
+    font-size: 22px
+    padding: 14px 40px
+
+.button
+    border-radius: 100px
+    width: fit-content
+    transition: opacity 0.3s ease
+
+    @include button-big
+
+    &:hover
+        opacity: 0.6
+
+    &--filled
+        background-color: $lemon
+        color: $primary-black
+
+    &--outlined
+        background-color: transparent
+        border: 2px solid $lemon
+        color: $lemon
+
+    &--medium
+        @media (max-width: $breakpoint-tablet)
+            @include button-medium
+
+    &--big
+        @media (max-width: $breakpoint-mobile)
+            @include button-medium
+
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: $primary-black
+    height: 80px
+    padding: 0 $desktop-left-padding
+
+    @media (max-width: $breakpoint-tablet)
+        padding: 0 $tablet-left-padding
+
+    @media (max-width: $breakpoint-mobile)
+        height: 48px
+
+    &__icons
+        display: flex
+        justify-content: start
+        align-items: center
+
+    &__icon-earth
+        @media (max-width: $breakpoint-tablet)
+            height: 24px
+
+    &__icon-logo
+        @media (max-width: $breakpoint-tablet)
+            height: 17px
+
+    &__menu-icon
+        display: none
+        padding: 0
+
+        @media (max-width: $breakpoint-mobile)
+            display: block
+
+    &__close-icon
+        position: absolute
+        display: none
+        right: 0
+        top: 0
+        padding: 10px
+        z-index: 10
+
+.nav
+    @media (max-width: $breakpoint-mobile)
+        display: none
+
+    &--open
+        display: none
+        box-sizing: border-box
+
+        @media (max-width: $breakpoint-mobile)
+            display: flex
+            background-color: $primary-black
+            position: fixed
+            top: 0
+            width: 50%
+            height: 100%
+            padding: 40px
+            right: 0
+            z-index: 1
+
+        ~ .header__close-icon
+            display: block
+
+    &__icon
+        opacity: 1
+        &--hover
+            position: absolute
+            opacity: 0
+            top: 0
+            left: 0
+
+    &__list
+        display: flex
+        align-items: center
+        gap: 30px
+
+        @media (max-width: $breakpoint-mobile)
+            flex-direction: column
+            justify-content: start
+            align-items: start
+            gap: 15px
+
+    &__item
+        cursor: pointer
+        font-size: 18px
+        line-height: 21.6px
+
+        &--hover-text
+            &:hover
+                background: $pink-lemon-gradient
+                -webkit-background-clip: text
+                background-clip: text
+                color: transparent
+
+        &--hover-icon
+            position: relative
+
+            &:hover
+                .nav__icon
+                    opacity: 0
+                .nav__icon--hover
+                    opacity: 1
 
 .content_sections
     background: linear-gradient(196.2deg, #0D1E48 0%, #304571 100%)
-    padding: 58px base.$desktop-left-padding
+    padding: 58px $desktop-left-padding
 
-    @media (max-width: base.$breakpoint-tablet)
-        padding: 58px base.$tablet-left-padding
+    @media (max-width: $breakpoint-tablet)
+        padding: 58px $tablet-left-padding
+
+@mixin middleTabletFont
+    @media (max-width: $breakpoint-tablet)
+        font-size: 48px
+        line-height: 48px
+
+.banner
+    --background-url: url('./assets/SpaceBackground.webp')
+    @include backgroundWithGradient
+
+    @include flexCentralAligment
+
+    overflow: hidden
+    gap: 56px
+    padding: 59px 0px 59px $desktop-left-padding
+
+    @media (max-width: $breakpoint-tablet)
+        padding-left: $tablet-left-padding
+
+    @media (max-width: $breakpoint-mobile)
+        flex-direction: column-reverse
+        justify-content: flex-start
+        height: 451px
+        padding: 0
+        gap: 30px
+
+    &__info
+        display: flex
+        flex-direction: column
+        gap: 22px
+
+        @include middleTabletFont
+
+        @media (max-width: $breakpoint-mobile)
+            align-items: center
+            justify-content: center
+            padding: 0 34px 44px
+
+    &__title
+        font-size: 72px
+        line-height: 72px
+        font-weight: 800
+
+        @include middleTabletFont
+
+        @media (max-width: $breakpoint-mobile)
+            text-align: center
+            font-size: 36px
+            line-height: 36px
+
+    &__description
+        font-weight: 800
+        font-size: 32px
+        line-height: 38.4px
+
+        @media (max-width: $breakpoint-tablet)
+            font-size: 22px
+            line-height: 26.4px
+
+        @media (max-width: $breakpoint-mobile)
+            font-size: 16px
+            line-height: 19.2px
+
+    &__highlight--pink
+        color: $pink
+
+    &__highlight--lemon
+        color: $lemon
+
+    &__image
+        overflow: hidden
+
+        @media (max-width: $breakpoint-tablet)
+            > img
+                width: 299px
+
+        @media (max-width: $breakpoint-mobile)
+            flex-shrink: 0
 
 .offers
     display: flex
@@ -28,29 +245,154 @@
     align-items: stretch
     padding-bottom: 62px
 
-    @media (min-width: base.$breakpoint-tablet)
+    @media (min-width: $breakpoint-tablet)
         grid-template-columns: 1fr 1fr
 
         > article:nth-child(4n),
         > article:nth-child(1)
             grid-column: 1 / -1
 
-    @media (max-width: base.$breakpoint-tablet)
+    @media (max-width: $breakpoint-tablet)
         grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
-        padding: 10px 10px 55px
+        padding-bottom: 55px
         justify-items: center
 
-    @media (max-width: base.$breakpoint-mobile)
+    @media (max-width: $breakpoint-mobile)
         grid-template-columns: 1fr
+
+@mixin cardTabletFontSize
+    @media (max-width: $breakpoint-tablet)
+        font-size: 40px
+        line-height: 40px
+
+@mixin cardBasicFontStyle
+    text-align: start
+    font-weight: 800
+
+.card
+    display: flex
+    gap: clamp(4px, 15px, 22px)
+    flex-direction: column
+    align-items: start
+    justify-content: space-between
+
+    @include backgroundWithGradient
+
+    box-sizing: border-box
+    height: 100%
+    min-height: 350px
+    border-radius: 10px
+    padding: 70px min(5vw, 35px)
+    flex: 1
+
+    @media (max-width: $breakpoint-tablet)
+        padding: 105px 27px 50px
+        width: 100%
+
+    &__header
+        margin: 0
+        @include cardBasicFontStyle
+
+        &--medium
+            font-size: 46px
+            line-height: 46px
+
+            @include cardTabletFontSize
+
+        &--big
+            font-size: 74px
+            line-height: 74px
+
+            @include cardTabletFontSize
+
+    &__description
+        font-size: 24px
+        line-height: 31.2px
+
+        @include cardBasicFontStyle
+
+        @media (max-width: $breakpoint-tablet)
+            display: flex
+            align-items: flex-end
+            height: 100%
+            font-size: 16px
+            line-height: 19.2px
+
+.info_section
+    &__title
+        font-size: 32px
+        line-height: 38.4px
+        font-weight: 800
+
+        @media (max-width: $breakpoint-tablet)
+            font-size: 24px
+            line-height: 28.8px
+
+        @media (max-width: $breakpoint-mobile)
+            font-size: 18px
+            line-height: 21.6px
+
+    &__content
+        font-size: 20px
+        line-height: 24px
+        opacity: 0.6
+        margin: 17px 0
+
+        @media (max-width: $breakpoint-tablet)
+            font-size: 16px
+            line-height: 19.2px
+
+        @media (max-width: $breakpoint-mobile)
+            font-size: 14px
+            line-height: 16.8px
+
+    &__toggle
+        display: none
+
+        &:checked
+            ~ .info_section__button .info_section__text--more
+                display: none
+
+            ~ .info_section__button .info_section__text--less
+                display: inline
+
+            ~ .info_section__content--hidden
+                display: block
+
+    &__content--hidden
+        overflow: hidden
+        display: none
+
+    &__button
+        display: inline-block
+        color: $lemon
+        font-weight: 800
+        font-size: 20px
+        line-height: 24px
+
+        &:hover
+            opacity: 0.6
+
+        @media (max-width: $breakpoint-tablet)
+            font-size: 16px
+            line-height: 19.2px
+
+        @media (max-width: $breakpoint-mobile)
+            font-size: 14px
+            line-height: 16.8px
+
+    &__text
+        &--less
+            display: none
 
 .footer
     height: 127px
-    background-color: base.$primary-black
+    background-color: $primary-black
 
     @include flexCentralAligment
     flex-direction: column
 
-    color: base.$lemon
+    color: $lemon
     font-weight: 800
     font-size: 18px
     line-height: 28px

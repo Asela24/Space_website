@@ -14,11 +14,13 @@ export const cards = [
     header: "Space is not just stars and planets",
     description: "Go on a space adventure",
     background: SecondCardBackground,
+    desktop: "medium",
   },
   {
     header: "For those who dream of stars",
     description: "Our offer: make your dream come true",
     background: ThirdCardBackground,
+    desktop: "medium",
   },
   {
     header: "Fulfill your fantastic dreams",
