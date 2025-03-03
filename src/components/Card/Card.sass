@@ -1,0 +1,60 @@
+@use '../../base'
+@import '../../base'
+
+@mixin tabletFontSize
+    @media (max-width: base.$breakpoint-tablet)
+        font-size: 40px
+        line-height: 40px
+
+@mixin basicFontStyle
+    text-align: start
+    font-weight: 800
+
+.card
+    display: flex
+    gap: clamp(4px, 15px, 22px)
+    flex-direction: column
+    align-items: start
+    justify-content: space-between
+
+    @include backgroundWithGradient
+
+    box-sizing: border-box
+    height: 100%
+    min-height: 350px
+    border-radius: 10px
+    padding: 70px min(5vw, 35px)
+    flex: 1
+
+    @media (max-width: base.$breakpoint-tablet)
+        padding: 105px 27px 50px
+        width: 100%
+
+    &__header
+        margin: 0
+        @include basicFontStyle
+
+        &--medium
+            font-size: 46px
+            line-height: 46px
+
+            @include tabletFontSize
+
+        &--big
+            font-size: 74px
+            line-height: 74px
+
+            @include tabletFontSize
+
+    &__description
+        font-size: 24px
+        line-height: 31.2px
+
+        @include basicFontStyle
+
+        @media (max-width: base.$breakpoint-tablet)
+            display: flex
+            align-items: flex-end
+            height: 100%
+            font-size: 16px
+            line-height: 19.2px

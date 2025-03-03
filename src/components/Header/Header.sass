@@ -1,0 +1,111 @@
+@use '../../base'
+
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: base.$primary-black
+    height: 80px
+
+    padding: 0 base.$desktop-left-padding
+
+    @media (max-width: base.$breakpoint-tablet)
+        padding: 0 base.$tablet-left-padding
+
+    @media (max-width: base.$breakpoint-mobile)
+        height: 48px
+
+    &__icons
+        display: flex
+        justify-content: start
+        align-items: center
+
+    &__icons-earth
+        @media (max-width: base.$breakpoint-tablet)
+            height: 24px
+
+    &__icons-logo
+        @media (max-width: base.$breakpoint-tablet)
+            height: 17px
+
+    &__menu-icon
+        background: none
+        border: none
+        display: none
+        cursor: pointer
+        padding: 0
+
+        @media (max-width: base.$breakpoint-mobile)
+            display: block
+
+    &__close-icon
+        position: absolute
+        display: none
+        right: 0
+        top: 0
+        padding: 10px
+        background: none
+        border: none
+        z-index: 10
+
+.nav
+    @media (max-width: base.$breakpoint-mobile)
+        display: none
+
+    &--open
+        display: none
+        box-sizing: border-box
+
+        @media (max-width: base.$breakpoint-mobile)
+            display: flex
+            background-color: black
+            position: fixed
+            top: 0
+            width: 50%
+            height: 100%
+            padding: 40px
+            right: 0
+            z-index: 1
+
+        ~ .header__close-icon
+            display: block
+
+    &__icon
+        opacity: 1
+        &--hover
+            position: absolute
+            opacity: 0
+            top: 0
+            left: 0
+
+    &__list
+        display: flex
+        align-items: center
+        gap: 30px
+
+        @media (max-width: base.$breakpoint-mobile)
+            flex-direction: column
+            justify-content: start
+            align-items: start
+            gap: 15px
+
+    &__item
+        cursor: pointer
+        font-size: 18px
+        line-height: 21.6px
+
+        &-hover-text
+            &:hover
+                background: base.$pink-lemon-gradient
+                -webkit-background-clip: text
+                background-clip: text
+                color: transparent
+
+        &-hover-icon
+            position: relative
+
+            &:hover
+                .nav__icon
+                    opacity: 0
+                .nav__icon--hover
+                    opacity: 1

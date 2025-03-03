@@ -1,0 +1,124 @@
+@use'./base'
+@import './base'
+
+.content_sections
+    background: linear-gradient(196.2deg, #0D1E48 0%, #304571 100%)
+    padding: 58px base.$desktop-left-padding
+
+    @media (max-width: base.$breakpoint-tablet)
+        padding: 58px base.$tablet-left-padding
+
+.offers
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 40px
+
+    &__label
+        font-weight: 800
+        font-size: 32px
+        line-height: 38.4px
+        align-self: start
+
+.cards_section
+    display: grid
+    width: 100%
+    gap: 30px
+    align-items: stretch
+    padding-bottom: 62px
+
+    @media (min-width: base.$breakpoint-tablet)
+        grid-template-columns: 1fr 1fr
+
+        > article:nth-child(4n),
+        > article:nth-child(1)
+            grid-column: 1 / -1
+
+    @media (max-width: base.$breakpoint-tablet)
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+        padding: 10px 10px 55px
+        justify-items: center
+
+    @media (max-width: base.$breakpoint-mobile)
+        grid-template-columns: 1fr
+
+.space_journey
+    &__title
+        font-size: 32px
+        line-height: 38.4px
+        font-weight: 800
+
+        @media (max-width: base.$breakpoint-tablet)
+            font-size: 24px
+            line-height: 28.8px
+
+        @media (max-width: base.$breakpoint-mobile)
+            font-size: 18px
+            line-height: 21.6px
+
+    &__content
+        font-size: 20px
+        line-height: 24px
+        opacity: 0.6
+        margin: 17px 0
+
+        @media (max-width: base.$breakpoint-tablet)
+            font-size: 16px
+            line-height: 19.2px
+
+        @media (max-width: base.$breakpoint-mobile)
+            font-size: 14px
+            line-height: 16.8px
+
+    &__toggle
+        display: none
+
+        &:checked
+            ~ .space_journey__button .space_journey__text--more
+                display: none
+
+            ~ .space_journey__button .space_journey__text--less
+                display: inline
+
+            ~ .space_journey__content--hidden
+                display: block
+
+    &__content--hidden
+        overflow: hidden
+        display: none
+
+    &__button
+        display: inline-block
+        cursor: pointer
+        color: base.$lemon
+        font-weight: 800
+        font-size: 20px
+        line-height: 24px
+
+        &:hover
+            opacity: 0.6
+
+        @media (max-width: base.$breakpoint-tablet)
+            font-size: 16px
+            line-height: 19.2px
+
+        @media (max-width: base.$breakpoint-mobile)
+            font-size: 14px
+            line-height: 16.8px
+
+    &__text
+        &--less
+            display: none
+
+.footer
+    height: 127px
+    background-color: base.$primary-black
+
+    @include flexCentralAligment
+    flex-direction: column
+
+    color: base.$lemon
+    font-weight: 800
+    font-size: 18px
+    line-height: 28px
