@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8ad20779.css",
+    "main.js": "/static/js/main.437580f5.js",
+    "static/media/SpaceBackground.png": "/static/media/SpaceBackground.6756c6d0ed0c5c74ec08.png",
+    "static/media/FourthCardBackground.png": "/static/media/FourthCardBackground.e6f10ea32e8c8a72ba77.png",
+    "static/media/ThirdCardBackground.png": "/static/media/ThirdCardBackground.11c650068ebd8d762a96.png",
+    "static/media/FirstCardBackground.png": "/static/media/FirstCardBackground.6570150636c00dd6e1cd.png",
+    "static/media/RocketIcon.svg": "/static/media/RocketIcon.bf2dbb7c0c33ada062ba83af3725edbe.svg",
+    "static/media/SecondCardBackground.png": "/static/media/SecondCardBackground.b5ead16a6e09000a6d89.png",
+    "static/media/EarthImage.png": "/static/media/EarthImage.592e9c3f81bda254904c.png",
+    "static/media/LogoIcon.svg": "/static/media/LogoIcon.6280a3954ecb02c0bf67dc9125f93945.svg",
+    "static/media/EarthIcon.svg": "/static/media/EarthIcon.0381c7e4a5fadc2c710e05053713bb30.svg",
+    "static/media/CartHoverIcon.svg": "/static/media/CartHoverIcon.130703b7b0cf9871648ffbe073cd6187.svg",
+    "static/media/CartIcon.svg": "/static/media/CartIcon.5fdc8f10c95015c32240615c1ad34fbf.svg",
+    "static/media/MenuIcon.svg": "/static/media/MenuIcon.6839994c70d8fa1e2451eb481ca217d5.svg",
+    "index.html": "/index.html",
+    "static/media/CloseIcon.svg": "/static/media/CloseIcon.79886a19c519555d9ce45bc4197a77f5.svg",
+    "main.8ad20779.css.map": "/static/css/main.8ad20779.css.map",
+    "main.437580f5.js.map": "/static/js/main.437580f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ad20779.css",
+    "static/js/main.437580f5.js"
+  ]
+}
