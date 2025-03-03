@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Space_website/static/css/main.78488e3c.css",
-    "main.js": "/Space_website/static/js/main.904377a3.js",
+    "main.css": "/Space_website/static/css/main.fec30dd2.css",
+    "main.js": "/Space_website/static/js/main.e4368a2f.js",
     "static/media/RocketIcon.svg": "/Space_website/static/media/RocketIcon.bf2dbb7c0c33ada062ba83af3725edbe.svg",
     "static/media/SpaceBackground.webp": "/Space_website/static/media/SpaceBackground.b3fdbdf9f741e910587a.webp",
     "static/media/FourthCardBackground.webp": "/Space_website/static/media/FourthCardBackground.5afed80ecedb34bbf2f8.webp",
@@ -10,17 +10,17 @@
     "static/media/FirstCardBackground.webp": "/Space_website/static/media/FirstCardBackground.7123ad74a008b4477f09.webp",
     "static/media/EarthImage.webp": "/Space_website/static/media/EarthImage.5fa5fc85f4a75d53871d.webp",
     "static/media/LogoIcon.svg": "/Space_website/static/media/LogoIcon.6280a3954ecb02c0bf67dc9125f93945.svg",
-    "static/media/EarthIcon.svg": "/Space_website/static/media/EarthIcon.0381c7e4a5fadc2c710e05053713bb30.svg",
+    "static/media/EarthLogoIcon.svg": "/Space_website/static/media/EarthLogoIcon.0381c7e4a5fadc2c710e05053713bb30.svg",
     "static/media/CartHoverIcon.svg": "/Space_website/static/media/CartHoverIcon.130703b7b0cf9871648ffbe073cd6187.svg",
     "static/media/CartIcon.svg": "/Space_website/static/media/CartIcon.5fdc8f10c95015c32240615c1ad34fbf.svg",
     "static/media/MenuIcon.svg": "/Space_website/static/media/MenuIcon.6839994c70d8fa1e2451eb481ca217d5.svg",
     "index.html": "/Space_website/index.html",
     "static/media/CloseIcon.svg": "/Space_website/static/media/CloseIcon.79886a19c519555d9ce45bc4197a77f5.svg",
-    "main.78488e3c.css.map": "/Space_website/static/css/main.78488e3c.css.map",
-    "main.904377a3.js.map": "/Space_website/static/js/main.904377a3.js.map"
+    "main.fec30dd2.css.map": "/Space_website/static/css/main.fec30dd2.css.map",
+    "main.e4368a2f.js.map": "/Space_website/static/js/main.e4368a2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.78488e3c.css",
-    "static/js/main.904377a3.js"
+    "static/css/main.fec30dd2.css",
+    "static/js/main.e4368a2f.js"
   ]
 }
