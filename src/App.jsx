@@ -18,7 +18,7 @@ function App() {
   const { isOpen, setOpen, menuRef, handleClose } = useMenuToggle();
 
   return (
-    <div className="App">
+    <div className="app">
       <header className="header" ref={menuRef}>
         <div className="header__icons">
           <img

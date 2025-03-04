@@ -1,11 +1,11 @@
 @use './base' as *
 
-@mixin button-medium
+@mixin buttonMedium
     font-size: 16px
     line-height: 19.2px
     padding: 7px 40px
 
-@mixin button-big
+@mixin buttonBig
     font-size: 22px
     padding: 14px 40px
 
@@ -14,10 +14,15 @@
     width: fit-content
     transition: opacity 0.3s ease
 
-    @include button-big
+    @include buttonBig
+
+    @include coarsePointerHover
 
     &:hover
         opacity: 0.6
+
+        @media (max-width: $breakpoint-mobile)
+            opacity: 1
 
     &--filled
         background-color: $lemon
@@ -30,17 +35,19 @@
 
     &--medium
         @media (max-width: $breakpoint-tablet)
-            @include button-medium
+            @include buttonMedium
 
     &--big
         @media (max-width: $breakpoint-mobile)
-            @include button-medium
+            @include buttonMedium
+
+.app
+    background-color: $primary-black
 
 .header
     display: flex
     justify-content: space-between
     align-items: center
-    background-color: $primary-black
     height: 80px
     padding: 0 $desktop-left-padding
 
@@ -146,6 +153,8 @@
 
     @media (max-width: $breakpoint-tablet)
         padding: 58px $tablet-left-padding
+    @media (max-width: $breakpoint-mobile)
+        padding: 58px min(5vw, $tablet-left-padding)
 
 @mixin middleTabletFont
     @media (max-width: $breakpoint-tablet)
@@ -289,6 +298,9 @@
         padding: 105px 27px 50px
         width: 100%
 
+    @media (max-width: $breakpoint-mobile)
+        padding: 105px 27px min(5vw, 50px)
+
     &__header
         margin: 0
         @include cardBasicFontStyle
@@ -370,6 +382,8 @@
         font-size: 20px
         line-height: 24px
 
+        @include coarsePointerHover
+
         &:hover
             opacity: 0.6
 
@@ -387,7 +401,6 @@
 
 .footer
     height: 127px
-    background-color: $primary-black
 
     @include flexCentralAligment
     flex-direction: column

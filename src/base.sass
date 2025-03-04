@@ -7,10 +7,15 @@ $dark-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.
 
 $breakpoint-desktop: 1248px
 $breakpoint-tablet: 768px
-$breakpoint-mobile: 380px
+$breakpoint-mobile: 360px
 
 $desktop-left-padding: 80px
 $tablet-left-padding: 28px
+
+@mixin coarsePointerHover
+    @media (pointer: coarse)
+        &:hover
+            opacity: 1 !important
 
 @mixin backgroundWithGradient
     background: $dark-gradient, var(--background-url)
