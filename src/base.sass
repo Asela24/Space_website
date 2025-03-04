@@ -21,3 +21,8 @@ $tablet-left-padding: 28px
     display: flex
     justify-content: center
     align-items: center
+
+@mixin coarsePointerHover
+    @media (pointer: coarse)
+        &:hover
+            opacity: 1 !important

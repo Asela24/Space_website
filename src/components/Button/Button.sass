@@ -1,6 +1,6 @@
 @use '../../base' as *
 
-@mixin button-medium
+@mixin buttonMedium
     font-size: 16px
     line-height: 19.2px
     padding: 7px 40px
@@ -15,6 +15,8 @@
     &:hover
         opacity: 0.6
 
+    @include coarsePointerHover
+
     &--filled
         background-color: $lemon
 
@@ -25,8 +27,8 @@
 
     &--medium
         @media (max-width: $breakpoint-tablet)
-            @include button-medium
+            @include buttonMedium
 
     &--big
         @media (max-width: $breakpoint-mobile)
-            @include button-medium
+            @include buttonMedium

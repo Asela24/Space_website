@@ -29,6 +29,9 @@
         padding: 105px 27px 50px
         width: 100%
 
+    @media (max-width: $breakpoint-mobile)
+        padding: 105px 27px min(5vw, 50px)
+
     &__header
         margin: 0
         @include basicFontStyle

@@ -1,11 +1,17 @@
 @use'./base' as *
 
+.app
+    background-color: $primary-black
+
 .content_sections
     background: linear-gradient(196.2deg, #0D1E48 0%, #304571 100%)
     padding: 58px $desktop-left-padding
 
     @media (max-width: $breakpoint-tablet)
         padding: 58px $tablet-left-padding
+
+    @media (max-width: $breakpoint-mobile)
+        padding: 58px min(5vw, $tablet-left-padding)
 
 .offers
     display: flex
@@ -44,7 +50,6 @@
 
 .footer
     height: 127px
-    background-color: $primary-black
 
     @include flexCentralAligment
     flex-direction: column

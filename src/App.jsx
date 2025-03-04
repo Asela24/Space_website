@@ -8,7 +8,7 @@ import { cards } from "./utils/cards";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <main className="main">
         <Banner />
